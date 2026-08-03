@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#container{
+    margin:50px;
+    border:1px solid blue;
+    background:gray;
+    float:left;
+}
+
+#container ul{
+    list-style:none;
+}
+
+#container ul li{
+    float:left;
+    position:relative;
+}
+
+/* Link menu chính */
+#container ul li a{
+    display:block;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    padding:8px 12px;
+    background:gray;
+    text-transform:uppercase;
+}
+
+/* Hover menu chính */
+#container ul li a:hover{
+    background:orange;
+    color:white;
+}
+
+/* Menu con */
+#container ul li ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:200px;
+    z-index:999;
+}
+
+/* Hiện menu con khi hover */
+#container ul li:hover > ul{
+    display:block;
+}
+
+/* Các item menu con */
+#container ul li ul li{
+    float:none;
+    width:100%;
+    border:1px solid green;
+}
+
+/* Link menu con */
+#container ul li ul li a{
+    background:white;
+    color:black;
+    padding:10px;
+    text-transform:uppercase;
+}
+
+/* Hover menu con */
+#container ul li ul li a:hover{
+    background:orange;
+    color:white;
+}
