@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function gtMIN(a,b,c,kq) {
+            kq = Math.min(Number(a),Number(b),Number(c))
+            document.getElementById("ketqua").innerText = kq
+         }
+          function gtMAX(a,b,c,kq) {
+            kq = Math.max(Number(a),Number(b),Number(c))
+            document.getElementById("ketqua").innerText = kq
+         }
+         function gtSin(a, kq) {
+            kq = Math.sin(Number(a))
+            document.getElementById("ketqua").innerText = kq
+         }
+         function gtCos(a, kq) {
+            kq = Math.cos(Number(a))
+            document.getElementById("ketqua").innerText = kq
+         }
+         function gtMu(a, b,kq) {
+            gt=1
+            for (i=1;i<=b;i++){
+                gt*=a
+            }
+            document.getElementById("ketqua").innerText = gt
+         }
+    </script>
+    <style>
+        table tr td{
+            border: solid 
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                 a(So thu 1): 
+            </td>
+            <td>
+                <input type="text" id="so1">
+            </td>
+        </tr>
+         <tr>
+            <td>
+                 b(So thu 2): 
+            </td>
+            <td>
+                <input type="text" id="so2">
+            </td>
+        </tr>
+         <tr>
+            <td>
+                 c(So thu 3): 
+            </td>
+            <td>
+                <input type="text" id="so3">
+            </td>
+        </tr>
+         <tr>
+            <td>
+                 Ketqua: 
+            </td>
+            <td id="ketqua"></td>
+        </tr>
+    </table>
+         <input type="button" value="MIN" onClick="gtMIN(so1.value, so2.value, so3.value)" />
+         <input type="button" value="MAX" onClick="gtMAX(so1.value, so2.value, so3.value)" />
+         <input type="button" value="sin(a)" onClick="gtSin(so1.value)" />
+         <input type="button" value="cos(a)" onClick="gtCos(so1.value)" />
+         <input type="button" value="a^b" onClick="gtMu(so1.value, so2.value)" />
+
+    
+</body>
+</html>

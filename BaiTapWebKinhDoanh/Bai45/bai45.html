@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tinhTien1(a) {
+            kq = a*105
+            document.getElementById('tt1').value = kq
+
+
+        }
+         function tinhTien2(a) {
+            kq = a*20
+            document.getElementById('tt2').value = kq
+
+
+        }
+         function tinhTien3(a) {
+            kq = a*15
+            document.getElementById('tt3').value = kq
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><b>Mã sản phẩm</b></td>
+            <td><b>Tên sản phẩm</b></td>
+            <td><b>Giá</b></td>
+            <td><b>Số lượng</b></td>
+            <td><b>Tiền</b></td>
+        </tr>
+        <tr>
+            <td>C112</td>
+            <td>Chuột Quang</td>
+            <td>105</td>
+            <td>
+                <input type="text" id="sl1" oninput="tinhTien1(sl1.value)">
+            </td>
+            <td>
+                <input type="text" id="tt1">
+            </td>
+        </tr>
+        <tr>
+            <td>B124</td>
+            <td>Bàn phím</td>
+            <td>20</td>
+            <td>
+                <input type="text" id="sl2" oninput="tinhTien2(sl2.value)">
+            </td>
+            <td>
+                <input type="text" id="tt2">
+            </td>
+        </tr>
+        <tr>
+            <td>U125</td>
+            <td>USB KingMax</td>
+            <td>15</td>
+            <td>
+                <input type="text" id="sl3" oninput="tinhTien3(sl3.value)">
+            </td>
+            <td>
+                <input type="text" id="tt3">
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>

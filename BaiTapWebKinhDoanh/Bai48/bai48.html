@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #resultTable{
+            margin-top: 30px;
+            display: none;
+            width: 500px; 
+            border-collapse: collapse;
+        }
+        #resultTable th,  #resultTable td {
+            border: 1px solid black; 
+            padding: 5px; 
+            text-align: left
+        }
+         #resultTable th{
+            background-color: blue;
+            color: white; 
+         }
+    </style>
+    <script>
+       
+        function DangKi() {
+                    // 1. Kiểm tra và lấy Tên, Email
+                    var ten = document.getElementById("input1").value.trim();
+                    var email = document.getElementById("inputEmail").value.trim();
+
+                    if (ten === "" || email === "") {
+                        alert("Vui lòng nhập đầy đủ Tên và Email!");
+                        return false;
+                    }
+                // 2. Lấy Ngày/Tháng/Năm
+                    var date = document.getElementById("date").value;
+                    var month = document.getElementById("month").value;
+                    var year = document.getElementById("year").value;
+                    var birthday = date + "/" + month + "/" + year;
+
+            var gioitinh = "";
+                    if (document.getElementById("nam").checked) {
+                        gioitinh = document.getElementById("nam").value;
+                    } else if (document.getElementById("nu").checked) {
+                        gioitinh = document.getElementById("nu").value;
+                    }
+
+                var listSothich = ["shopping", "travel", "chat", "read", "music"]
+                var soThich = ""; 
+                for (var i=0; i<listSothich.length; i++) {
+                    item = document.getElementById(listSothich[i]); 
+                    if (item && item.checked) {
+                        soThich = item.value
+                        break; 
+                    }
+                }
+
+                var listMauSac = ["sky", "red", "yellow", "green", "violet"]
+                var mausac=""
+                for (i=0; i<listMauSac.length; i++) {
+                    var item = document.getElementById(listMauSac[i])
+                    if (item && item.checked){
+                        mausac = item.value
+                        break; 
+                    }
+
+                }
+                
+            var xmlText = `<form>
+                                <ten>${ten}</ten>
+                                <email>${email}</email>
+                                <gioitinh>${gioitinh}</gioitinh>
+                                <birthday>${birthday}</birthday>
+                                <soThich>${soThich}</soThich>
+                                <mausac>${mausac}</mausac>
+                            </form>`
+
+              var parser = new DOMParser()
+              var xmlDoc = parser.parseFromString(xmlText, "text/xml"); 
+
+              var tenXml = xmlDoc.getElementsByTagName("ten")[0].textContent
+              var emailXml =xmlDoc.getElementsByTagName("email")[0].textContent
+              var gioitinhXml = xmlDoc.getElementsByTagName("gioitinh")[0].textContent
+              var birthdayXml = xmlDoc.getElementsByTagName("birthday")[0].textContent
+              var soThichXml = xmlDoc.getElementsByTagName("soThich")[0].textContent
+              var mausacXml = xmlDoc.getElementsByTagName("mausac")[0].textContent
+
+              var tbody = document.getElementById("resultBody")
+              var row = document.createElement("tr")
+
+              row.innerHTML = `
+                 <td>${tenXml}</td>
+                <td>${emailXml}</td>
+                <td>${gioitinhXml}</td>
+                <td>${birthdayXml}</td>
+                <td>${soThichXml}</td>
+                <td>${mausacXml}</td>
+              `; 
+              tbody.appendChild(row);
+              // 7. Cho bảng xuất hiện từ "hư không"
+            document.getElementById("resultTable").style.display = "table";
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Đăng kí thành viên</h1>
+    <hr/>
+    <table>
+        <tr>
+            <td>Tên: </td>
+            <td><input type="text" id="input1"></td>
+        </tr>
+    </table>
+    <table>
+        
+        <tr>
+            <td>Ngày sinh(*): </td>
+            <td></td>
+            <td>Ngày(*):</td>
+            <td><select name="date" id="date">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select></td>
+            <td>Tháng</td>
+            <td>
+                <select name="month" id="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </td>
+            <td>Năm: </td>
+            <td>
+                <select name="year" id="year">
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Giới tính: </td>
+            <td></td>
+            <td>
+                <input id="nam" type="radio" name="Nam" value="Nam">
+                <label for="nam"> Nam</label>
+            </td>
+            
+            <td>
+                <input id="nu" type="radio" name="nu" value="nu">
+                <label for="nu"> Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td>
+                <input type="text" id="inputEmail">
+            </td>
+        </tr>
+    </table>
+    <p>Sở thích của bạn: </p>
+    <form> 
+        <input id="shopping" type="checkbox" value="shopping">
+        <label for="shopping">Mua sắm</label>
+        <br/>
+        <input id="travel" type="checkbox" value="travel">
+        <label for="travel">Du lịch</label>
+        <br/>
+        <input id="chat" type="checkbox" value="chat">
+        <label for="chat">Tán gẫu</label>
+        <br/>
+        <input id="read" type="checkbox" value="read">
+        <label for="read">Đọc sách</label>
+        <br/>
+        <input id="music" type="checkbox" value="music">
+        <label for="music">Nghe nhạc</label>
+    </form>
+    
+    <form> 
+        <p>Sở thích của bạn: </p>
+        <input id="sky" type="checkbox" value="sky">
+        <label for="sky" style="background-color: aqua;">Màu xanh da trời</label>
+        <br/>
+        <input id="red" type="checkbox" value="red">
+        <label for="red" style="background-color: red;">Màu đỏ</label>
+        <br/>
+        <input id="yellow" type="checkbox" value="yellow">
+        <label for="yellow" style="background-color: yellow;">Màu vàng</label>
+        <br/>
+        <input id="green" type="checkbox" value="green">
+        <label for="green" style="background-color: green;">Màu xanh lá</label>
+        <br/>
+        <input id="violet" type="checkbox" value="violet">
+        <label for="violet" style="background-color: orchid;">Màu tím</label>
+    </form>
+    <Br>
+    <button type="button" onClick="DangKi()">Đăng kí</button>
+    <button type="button">Tiếp</button>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Email</th>
+                <th> Giới tính</th>
+                <th>Năm sinh</th>
+                <th>Sở thích</th>
+                <th>Màu sắc</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody">
+        </tbody>
+    </table>
+    
+</body>
+</html>

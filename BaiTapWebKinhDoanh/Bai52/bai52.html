@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sanphams = [
+            {
+                ma: "sp1",
+                ten: "Cocacola",
+                gia: 15000
+            },
+            {
+                ma: "sp2",
+                ten: "Pepsi",
+                gia: 25000
+            },
+            {
+                ma: "sp3",
+                ten: "Sting",
+                gia: 17000
+            }
+        ];
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Muốn tìm gì: </td>
+            <td>
+                <input type="text" id="input1" placeholder="Nhập tên sản phẩm">
+            </td>
+        </tr>
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Mã sản phẩm</td>
+                <td>Tên sản phẩm</td>
+                <td>Giá</td>
+            </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+    </table>
+    <script>
+        let tableBody = document.getElementById("resultBody")
+        let input1 = document.getElementById("input1")
+
+        function showProduct(ds){
+            tableBody.innerHTML=""
+
+            for (let sp of ds){
+                let tr = document.createElement("tr")
+
+                let td1= document.createElement("td")
+                td1.innerText = sp.ma
+
+                let td2 = document.createElement("td")
+                td2.innerText = sp.ten 
+
+                let td3 = document.createElement("td")
+                td3.innerText = sp.gia
+
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tr.appendChild(td3)
+
+                tableBody.appendChild(tr)
+            }
+
+        }
+
+        showProduct(sanphams)
+
+        input1.addEventListener("input", function(){
+
+            let keyword = input1.value.toLowerCase()
+
+            let ketqua = sanphams.filter(function(sp){
+                return sp.ten.toLowerCase().includes(keyword)
+            })
+            showProduct(ketqua)
+        })
+    </script>
+</body>
+</html>

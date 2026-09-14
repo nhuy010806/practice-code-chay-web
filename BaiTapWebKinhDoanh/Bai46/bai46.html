@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          function Reload() {
+            document.getElementById("r1").value=""
+            document.getElementById("g1").value=""
+            document.getElementById("b1").value=""
+            document.getElementById("r2").value=""
+            document.getElementById("g2").value=""
+            document.getElementById("b2").value=""
+            // Trả lại màu nền và màu chữ về mặc định (trắng và đen)
+            document.getElementById("hamletBox").style.backgroundColor = "";
+            document.getElementById("hamletBox").style.color = "";
+          }
+
+          function Apply() {
+            let a1=document.getElementById("r1").value
+            let a2=document.getElementById("g1").value
+            let a3=document.getElementById("b1").value
+            let bgColor = "#" + a1 + a2 + a3; 
+            document.getElementById("hamletBox").style.backgroundColor = bgColor;
+
+            let a4=document.getElementById("r2").value
+            let a5=document.getElementById("g2").value
+            let a6=document.getElementById("b2").value
+            let textColor = "#" + a4 + a5 + a6; 
+            document.getElementById("hamletBox").style.color = textColor;
+          }
+    </script>
+    <style>
+        .Background1{
+            display: flex; 
+            gap: 5px; 
+        }
+         .Background1 input{
+            align-items: center;
+            width: 30px;
+        }
+        h1 {
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>A simple color picker</h1>
+    <table border="1" cellpadding="10" style="margin: 0 auto; border-collapse: collapse;">
+        <tr >
+            <td valign="top">
+                <p>Background (enter values from '00' to 'FF')</p>
+                <div class="Background1">
+                    <div>
+                        RED: 
+                    </div>
+                    <div>
+                        <input type="text" id="r1">
+                    </div>
+                    <div>
+                        GREEN:  
+                    </div>
+                    <div>
+                        <input type="text" id="g1">
+                    </div>
+                    <div>
+                        BLUE: 
+                    </div>
+                    <div>
+                        <input type="text" id="b1">
+                    </div>
+                </div>
+                <p>Text (enter values from '00' to 'FF')</p>
+                <div class="Background1">
+                    <div>
+                        RED: 
+                    </div>
+                    <div>
+                        <input type="text" id="r2">
+                    </div>
+                    <div>
+                        GREEN:  
+                    </div>
+                    <div>
+                        <input type="text" id="g2">
+                    </div>
+                    <div>
+                        BLUE: 
+                    </div>
+                    <div>
+                        <input type="text" id="b2">
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <input type="button" value ="Apply" onClick="Apply()">
+                    <input type="button" value ="Reload" onClick="Reload()">
+                </div>
+            </td>
+            <td id ="hamletBox" valign="top" style="max-width: 400px;">
+                <h2>HAMLET:</h2>
+                <p>Speak the speech, I pray you, as I pronounced it to you, trippingly on the tongue: but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines.</p>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

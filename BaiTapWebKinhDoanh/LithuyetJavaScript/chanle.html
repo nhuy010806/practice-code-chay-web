@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="chanle.js"></script>
+    <script>
+        function Kiemtrachanle(a) {
+            ketqua = isEven(a); 
+            if (ketqua==true) {
+               alert("Đây là số chẵn"); 
+            }
+            else {
+                alert("Đây là số lẻ")
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <h1>Kiểm tra số chẵn hay lẻ: </h1>
+    <p>Nhập số: </p>
+    <input type="number" id="soa">
+    <p></p>
+    <input type="button" value="Kiemtrachanle" onClick="Kiemtrachanle(soa.value)">
+    
+</body>
+</html>

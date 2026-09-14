@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function GiaiPhuongTrinh() {
+            a =document.getElementById("hsa").value
+            b=document.getElementById("hsb").value
+            a=Number(a)
+            b=Number(b)
+            kq=document.getElementById("ketqua")
+            if (a==0 && b==0) {
+                kq.innerText="Vo so nghiem"
+            }
+            else if(a==0 && b!=0){
+                kq.innerText = "Vo nghiem"
+            } else {
+                kq.innerText = -b/a
+            }
+         }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">Phương trình bậc 1: </td>
+        </tr>
+        <tr>
+            <td>Hệ số a: </td>
+            <td>
+                <input type="text" id="hsa">
+            </td>
+        </tr>
+        <tr>
+            <td>Hệ số b: </td>
+            <td>
+                <input type="text" id="hsb">
+            </td>
+        </tr>
+        <tr>
+            <td>Kết quả:</td>
+            <td id="ketqua"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Giai" onclick="GiaiPhuongTrinh()">
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

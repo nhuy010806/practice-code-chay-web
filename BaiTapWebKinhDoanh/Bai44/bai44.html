@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+              .btn{
+                width: 564px;
+              }
+              .btn1{
+                width: 1135px;
+              }
+              
+    </style>
+    <script>
+        // Nhập dữ liệu
+        function nhapDuLieu() {
+            let chuoi=document.getElementById("input").value
+            document.getElementById("output").innerText = chuoi
+        }
+        // Dem ki tu hoa
+        function demKiTu() {
+            let chuoi=document.getElementById("input").value
+            dem = 0
+            for(i=0;i<chuoi.length; i++){
+                if (chuoi[i]>='A' && chuoi[i]<='Z') {
+                    dem += 1 ; 
+                }
+            }
+            document.getElementById("output").value = "Số kí tự hoa: " + dem 
+        }
+        // In chu hoa 
+        function inChuHoa(){
+            let chuoi=document.getElementById("input").value
+            kq = chuoi.toUpperCase()
+            document.getElementById("output").value = "In chữ hoa ra là: " + kq
+        }
+        // In mỗi ký tự (hoặc từ liền nhau) ra mỗi dòng
+        function inMoiTu() {
+            let chuoi = document.getElementById("input").value;
+            
+            // Kiểm tra xem người dùng có nhập gì không
+            if (chuoi === "") {
+                document.getElementById("output").value = "Vui lòng nhập dữ liệu!";
+            } else {
+                // Dùng split("") để tách từng chữ cái/con số một
+                let mangKyTu = chuoi.split("");
+                
+                // Nối các ký tự lại bằng dấu xuống dòng "\n"
+                document.getElementById("output").value = mangKyTu.join("\n");
+            }
+        }
+
+        function DemChuThuong() {
+             let chuoi = document.getElementById("input").value;
+             dem = 0
+            for(i=0;i<chuoi.length; i++){
+                if (chuoi[i]>='a' && chuoi[i]<='z') {
+                    dem += 1 ; 
+                }
+            }
+            document.getElementById('output').value = "Đếm chữ thường ra là: " + dem
+        }
+        // In chữ thường
+        function inChuThuong() {
+            let chuoi = document.getElementById("input").value;
+
+            document.getElementById("output").value =
+                chuoi.toLowerCase();
+        }
+         // Mở website W3C
+        function moW3C() {
+            window.open(
+                "https://www.w3schools.com/",
+                "_blank"
+            );
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Sử dụng các hàm Xử lí Chuỗi</h1>
+    <table>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend><h3>Nhập dữ liệu</h3></legend>
+                    <textarea cols="70" rows="5" id="input"></textarea>
+                </fieldset>
+            </td>
+            <td>
+                <fieldset>
+                    <legend><h3>Kết quả</h3></legend>
+                    <textarea cols="70" rows="5" id="output"></textarea>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="btn" type="button" value="Nhập dữ liệu" onClick="nhapDuLieu()">
+            </td>
+            <td>
+                <input class="btn" type="button" value="Đếm kí tự hoa" onClick="demKiTu()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="btn" type="button" value="In chữ hoa" onClick ="inChuHoa()">
+            </td>
+            <td>
+                <input class="btn" type="button" value="In mỗi từ trên mỗi dòng" onClick="inMoiTu()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="btn" type="button" value="In chữ thường" onClick="inChuThuong()">
+            </td>
+            <td>
+                <input class="btn" type="button" value="Đếm số từ">
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <input class="btn" type="button" value="Đếm số kí tự thường" onclick="DemChuThuong()">
+            </td>
+            <td>
+                <input class="btn" type="button" value="In nguyên âm, phụ âm">
+            </td>
+        </tr>
+       
+    </table>
+     <div>
+           
+                 <input class="btn1" type="button" value="Xem website xử lí chuỗi w3c" onClick=" moW3C()">
+        </div>
+
+    
+</body>
+</html>

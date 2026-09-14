@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function usingText() {
+            x = document.getElementById("intro")
+            x.innerText = "Welcome uel"
+        }
+        function usingHTML() {
+            p = document.getElementById("intro")
+            p.innerHTML = "<font color='blue'>Welcome UEL</font>"
+        }
+        function usingAttribute() {
+            p = document.getElementById("intro")
+            p.innerText = "Welcome UEL"
+            p.setAttribute("style", "color: red")
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onClick="usingText()">Welcome UEL</button>
+    <button type="button" onClick="usingHTML()">Welcome UEL</button>
+    <button type="button" onClick="usingAttribute()">Blog hoc lap trinh</button>
+    <p id="intro"></p>
+</body>
+</html>

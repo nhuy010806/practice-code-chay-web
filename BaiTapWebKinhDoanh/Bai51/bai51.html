@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        data = {
+            "Sanphams": [
+                {
+                    "MaSP": "sp_1xxx",
+                    "TenSP": "DELL Inspiron 14NR",
+                    "SoLuong": 100,
+                    "DonGia": 150000
+                },
+                {
+                    "MaSP": "sp_2yyyy",
+                    "TenSP": "HP Inspiron 113",
+                    "SoLuong": 130,
+                    "DonGia": 140000
+                }
+            ]
+        };
+
+        function Show() {
+            
+            for(i=0; i<data.Sanphams.length; i++){
+                tr= document.createElement("tr"); 
+                td1=document.createElement("td")
+                td1.innerText = data.Sanphams[i].MaSP
+                tr.appendChild(td1)
+                
+                td2=document.createElement("td")
+                td2.innerText = data.Sanphams[i].TenSP
+                tr.appendChild(td2)
+
+                td3=document.createElement("td")
+                td3.innerText = data.Sanphams[i].SoLuong
+                tr.appendChild(td3)
+
+                td4=document.createElement("td")
+                td4.innerText = data.Sanphams[i].DonGia
+                tr.appendChild(td4)
+
+                document.getElementById("resultBody").appendChild(tr);
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onClick="Show()">Hiển thị</button>
+    <table border="1">
+        <tbody id="resultBody"></tbody>
+    </table>
+    
+</body>
+</html>

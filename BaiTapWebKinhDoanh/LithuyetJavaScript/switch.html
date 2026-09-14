@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="switch.js"></script>
+    <script>
+        function Xuli(a,b,pt){
+            kq=Xulipheptoan(eval(a), eval(b), pt)
+            document.getElementById('ketqua').innerText=kq
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+        <tr>
+            <td>Hệ số a:</td>
+            <td>
+                <input type="text" id="hsa">
+            </td>
+        </tr>
+        <tr>
+            <td>Hệ số b:</td>
+            <td>
+                <input type="text" id="hsb">
+            </td>
+        </tr>
+        <tr>
+            <td>Kết quả: </td>
+            <td id="ketqua"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Cộng" onClick="Xuli(hsa.value, hsb.value, '+')">
+                <input type="button" value="Trừ" onClick="Xuli(hsa.value, hsb.value, '-')"> 
+                <input type="button" value="Nhân" onClick="Xuli(hsa.value, hsb.value, '*')"> 
+                <input type="button" value="Chia" onClick="Xuli(hsa.value, hsb.value, '/')"> 
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

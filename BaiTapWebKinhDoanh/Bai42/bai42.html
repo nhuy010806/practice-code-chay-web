@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .title {
+        text-align: center;
+    }
+    .form {
+        display: flex; 
+        justify-content: center;
+    }
+    body {
+        background-color: aqua;
+    }
+    .form1{
+        display: flex; 
+        margin-left: 410px;
+    }
+    .form2 {
+        display: flex;
+        margin-left: 410px;
+    }
+</style>
+</head>
+<body>
+    <div class="title">
+        <img src="hinh/Jackson.gif" alt="Jackson" >
+        <h1>Registration Form</h1>
+        <p>Registration your Jackson Electronics product here</p>
+    </div>
+    
+    <form class="form">
+        <table>
+            <tr>
+                <td>
+                    <label for="first-name">First Name: </label>
+                </td>
+                <td>
+                    <input type="text" id="first-name">
+                </td>
+                <td>
+                    <label for="last-name">Last Name</label>
+                </td>
+                <td>
+                    <input type="text" id="last-name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ad1">Address #1: </label>
+                </td>
+                <td>
+                    <input type="text" id="ad1"> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ad2">Address #2: </label>
+                </td>
+                <td>
+                    <input type="text" id="ad2"> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="city">City: </label>
+                </td>
+                <td>
+                    <input type="text" id="city">
+                </td>
+                 <td>
+                    <label for="state">State: </label>
+                </td>
+                <td>
+                    <input type="text" id="state">
+                </td>
+                 <td>
+                    <label for="zip">Zip: </label>
+                </td>
+                <td>
+                    <input type="text" id="zip">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr />
+    <form class="form1">
+        <table>
+            <tr>
+                <td>
+                    <label for="Product">Product</label>
+                </td>
+                <td>
+                    <select name="tinhthanh">
+                        <option value="hanoi">ScanMaster</option>
+                        <option value="hue">ScanPhd</option>
+                        <option value="danang">Đà Nẵng</option>
+                        <option value="hcm">TP HCM</option>
+                        <option value="cantho">Cần Thơ</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="date-pur">Date Purchased: </label>
+                </td>
+                <td>
+                    <input type="text" id="date-pur">
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <label for="Serial# ">Serial#: </label>
+                </td>
+                <td>
+                    <input type="text" id="Serial#">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <label for="Used for:">Used for: </label>
+                </td>
+                <td>
+                    <input id="home" type="checkbox" value="home1">
+                    <label for="home">Home</label>
+                </td>
+                <td>
+                    <input id="edu" type="checkbox" value="edu1">
+                    <label for="edu">Education Institution</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="business" type="checkbox" value="business1">
+                    <label for="business">Business</label>
+                </td>
+                <td>
+                    <input id="other" type="checkbox" value="other1">
+                    <label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input id="Goverment" type="checkbox" value="Goverment1">
+                    <label for="Goverment">Goverment</label>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+     <table class="form2">
+        <tr>
+            <td valign="top">Comments?:&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+            <textarea cols="45" rows="5"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    
+</body>
+</html>

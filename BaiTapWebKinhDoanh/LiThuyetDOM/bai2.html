@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="titleholder"></div>
+    <script>
+        div = document.getElementById("titleholder")
+        // Buoc 2: Tao HTML element 
+        a = document.createElement("a")
+        // Bước 3: thiết lập thuộc tính cho element 
+        a.innerText = "https://tracuu.uel.edu.vn"
+        a.setAttribute("style", "font-size: 20; color: blue")
+        a.setAttribute("href", "https://lms.uel.edu.vn")
+        a.setAttribute("target", "_blank")
+        // Bước 4: Đưa HTML element lên web (holder)
+        div.appendChild(a)
+    </script>
+</body>
+</html>
